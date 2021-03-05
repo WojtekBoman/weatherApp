@@ -12,18 +12,18 @@ import WelcomeInfo from "../components/WelcomeInfo";
 import { getBackground } from "../utils/backgroundUtils";
 
 const WeatherPage = (props) => {
-  // get current display city
+  //Get current displayed city
   const city = useSelector((state) => state.forecast.city);
-  //get current display date
+  //Get current displayed date
   const currentDay = useSelector((state) => state.forecast.currentDay);
-  //get dates to create list of available days to check forecast
+  //Get dates to create list of available days to check forecast
   const rangeDays = useSelector((state) =>
     getFirstAndLastArrElem(state.forecast.forecastList)
   );
   //Get forecast for current day
   const dayForecast = useSelector((state) =>
     state.forecast.forecastList.filter((forecast) => {
-      //all dates are showed in UTC format
+      //Change from UTC to local format for a given location
       let date = getFormatDate(forecast.dt, city.timezone);
       return date.startsWith(currentDay);
     })
@@ -32,7 +32,7 @@ const WeatherPage = (props) => {
   const loading = useSelector((state) => state.forecast.loading);
   const {goToTop} = props;
   useEffect(() => {
-    //scroll after succesfull fetch forecast
+    //Scroll after succesfull fetch forecast
     if (dayForecast.length > 0 && !loading) goToTop();
   });
 
@@ -45,8 +45,8 @@ const WeatherPage = (props) => {
     const firstDay = rangeDays[0],
       lastDay = rangeDays[1];
     const dayList = getListDay(firstDay, lastDay, city.timezone);
-    /* I take the next hour, for the forecast for other days, 
-    I take the forecast for the middle of the day*/
+    /* For today I download the forecast for the current hour,
+     for other days of the week I choose the forecast for the hour in the middle of the day*/
     
     const index =
     getFormatDate(firstDay.dt,city.timezone) === currentDay
@@ -72,7 +72,7 @@ const WeatherPage = (props) => {
     );
   }
 
-  //If error is empty and we did not fetch forecasts display Welcome screen
+  //If error is empty and I did not fetch forecasts display Welcome screen
   return <WelcomeInfo />;
 };
 
