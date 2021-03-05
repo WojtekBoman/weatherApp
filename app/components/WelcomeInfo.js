@@ -1,17 +1,25 @@
 import React from "react";
-import { View } from "react-native";
-import {Text} from "react-native-elements";
+import { View, Text, StyleSheet } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { typography, icons, infoWindow } from "../styles";
 
 const WelcomeInfo = () => {
   return (
-    <View style={{ padding: 20, alignItems: "center" }}>
-      <Text h2 style={{ textAlign: "center" }}>
-        Check weather forecast
-      </Text>
-      <MaterialCommunityIcons name="weather-cloudy" size={200} />
+    <View style={styles.infoWindow}>
+      <Text style={styles.title}>Check weather forecast</Text>
+      <MaterialCommunityIcons name="weather-cloudy" size={icons.infoIconSize} />
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  infoWindow: {
+    ...infoWindow,
+  },
+  title: {
+    fontSize: typography.titleFontSize,
+    textAlign: "center",
+  },
+});
 
 export default WelcomeInfo;

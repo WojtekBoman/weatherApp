@@ -1,17 +1,22 @@
-import React from "react";
+import React, { useRef } from "react";
 import { ScrollView, StyleSheet } from "react-native";
 import { WeatherPage } from "../components/WeatherPage";
 import SearchBar from "../components/SearchBar";
 
 const Home = () => {
-    
-    return (
-      <ScrollView contentContainerStyle={styles.container}>
-        <WeatherPage style={{ flex: 1, margin: 15 }} />
-        <SearchBar />
-      </ScrollView>
-    );
-  }
+  const scrollView = useRef(null);
+
+  const goToTop = () => {
+    scrollView.current.scrollTo({ x: 0, y: 0, animated: true });
+  };
+
+  return (
+    <ScrollView contentContainerStyle={styles.container} ref={scrollView}>
+      <WeatherPage goToTop={goToTop} />
+      <SearchBar />
+    </ScrollView>
+  );
+};
 
 const styles = StyleSheet.create({
   container: {

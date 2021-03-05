@@ -9,6 +9,7 @@ const fetchForecast = (searchText) => {
 
 const handleResponse = (res) => {
   return res.json().then((response) => {
+    console.log(response);
     if (response.cod !== "200") {
       return Promise.reject(response.message);
     }

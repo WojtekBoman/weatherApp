@@ -1,6 +1,6 @@
 import React from "react";
 import { SafeAreaView, View, StyleSheet, Text } from "react-native";
-import { getHour } from "../utils/dateFormatter";
+import { getHour } from "../utils/dateUtils";
 import { colors, typography } from "../styles";
 
 const WeatherHourlyList = (props) => {
@@ -17,7 +17,7 @@ const WeatherHourlyList = (props) => {
           </Text>
 
           <Text h4 style={styles.info}>
-            {item.main.temp}°C
+            {((item.main.temp * 100) / 100).toFixed(2)}°C
           </Text>
         </View>
       ))}

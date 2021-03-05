@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import {View, ToastAndroid} from 'react-native';
 import { Input, Button } from "react-native-elements";
 import { useDispatch } from "react-redux";
@@ -12,7 +12,7 @@ const SearchBar = () => {
     const [searchText, setSearchText] = useState('');
     const dispatch = useDispatch();
 
-    const input = React.createRef();
+    const input = useRef(null);
     const loading = useSelector((state) => state.forecast.loading)
     const search = () =>{
       if(searchText){

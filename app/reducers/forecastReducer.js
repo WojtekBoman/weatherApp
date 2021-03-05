@@ -1,5 +1,5 @@
 import { forecastConstants } from "../constants/forecastConstants";
-import { formatDate } from "../utils/dateFormatter";
+import { formatDate } from "../utils/dateUtils";
 
 const initialState = {
   city: {},
@@ -11,6 +11,7 @@ const initialState = {
 
 export default (state = initialState, action) => {
   switch (action.type) {
+    //change day to display forecasts
     case forecastConstants.UPDATE_DAY_FORECAST:
       return {
         ...state,
@@ -21,6 +22,7 @@ export default (state = initialState, action) => {
         ...state,
         loading: true,
       };
+      //format date in order to keep dates in timezone's formats
     case forecastConstants.FETCH_FORECAST_SUCCESS:
       return {
         loading: false,

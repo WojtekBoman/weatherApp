@@ -1,11 +1,12 @@
 import React from "react";
 import { View, StyleSheet, Text } from "react-native";
 import { Ionicons, FontAwesome5, Entypo } from "@expo/vector-icons";
-import {colors,typography} from '../styles'
+import {colors,icons,typography} from '../styles'
 
-const CurrentWeather = (props) => {
+const WeatherDetails = (props) => {
+
   return (
-    <View style={{ flex: 1, marginTop: 20 }}>
+    <View>
       <View style={styles.weatherInfo}>
         <Text style={styles.title}>{props.city}</Text>
         <View style={styles.additionalInfo}>
@@ -16,26 +17,29 @@ const CurrentWeather = (props) => {
         <Text style={styles.subtitle}>
           {props.dayWeather.weather[0].description}
         </Text>
+        <Text style={styles.info}>
+          {props.currentDay}
+        </Text>
       </View>
 
       <View style={styles.additionalInfo}>
         <View style={styles.viewAlignedCenter}>
-          <Ionicons name="water" size={32} color="#FFF" />
+          <Ionicons name="water" size={icons.weatherIconSize} color={colors.white} />
           <Text style={styles.info}>Humidity</Text>
           <Text style={styles.info}>
             {props.dayWeather.main.humidity}%
           </Text>
         </View>
         <View style={styles.viewAlignedCenter}>
-          <Entypo name="air" size={32} color="#FFF" />
+          <Entypo name="air" size={icons.weatherIconSize} color={colors.white} />
           <Text style={styles.info}>Pressure</Text>
           <Text style={styles.info}>
             {props.dayWeather.main.pressure} Pa
           </Text>
         </View>
         <View style={styles.viewAlignedCenter}>
-          <FontAwesome5 name="wind" size={32} color="#FFF" />
-          <Text style={styles.info}>Wind speed</Text>
+          <FontAwesome5 name="wind" size={icons.weatherIconSize} color={colors.white} />
+          <Text style={styles.info}>Wind</Text>
           <Text style={styles.info}>
             {props.dayWeather.wind.speed} m/s
           </Text>
@@ -49,7 +53,7 @@ const styles = StyleSheet.create({
   weatherInfo: {
     flex: 1,
     alignItems: "center",
-    marginBottom: 30,
+    margin: 30
   },
   additionalInfo: {
     flex: 1,
@@ -74,4 +78,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default CurrentWeather;
+export default WeatherDetails;
