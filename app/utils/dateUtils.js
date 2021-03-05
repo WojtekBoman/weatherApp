@@ -5,7 +5,7 @@ export const getHour = (date, timezone) => {
 
 export const getFormatDate = (date, timezone) => formatDate(
   new Date((date + timezone) * 1000)
-);
+)
 
 export const getListDay = (firstDay, lastDay, timezone) => {
   const list = [];
@@ -37,12 +37,11 @@ export const getListDay = (firstDay, lastDay, timezone) => {
   return list;
 };
 
-const formatDate = (date) => {
+export const formatDate = (date) => {
   let dt = new Date(date),
     month = "" + (dt.getMonth() + 1),
     day = "" + dt.getDate(),
     year = dt.getFullYear();
-
   if (month.length < 2) month = "0" + month;
   if (day.length < 2) day = "0" + day;
 

@@ -11,7 +11,7 @@ import { ImageBackground, StyleSheet } from "react-native";
 import WelcomeInfo from "../components/WelcomeInfo";
 import { getBackground } from "../utils/backgroundUtils";
 
-export const WeatherPage = (props) => {
+const WeatherPage = (props) => {
   // get current display city
   const city = useSelector((state) => state.forecast.city);
   //get current display date
@@ -21,7 +21,7 @@ export const WeatherPage = (props) => {
     getFirstAndLastArrElem(state.forecast.forecastList)
   );
   //Get forecast for current day
-  const dayWeather = useSelector((state) =>
+  const dayForecast = useSelector((state) =>
     state.forecast.forecastList.filter((forecast) => {
       //all dates are showed in UTC format
       let date = getFormatDate(forecast.dt, city.timezone);
@@ -30,10 +30,10 @@ export const WeatherPage = (props) => {
   );
   const error = useSelector((state) => state.forecast.error);
   const loading = useSelector((state) => state.forecast.loading);
-
+  const {goToTop} = props;
   useEffect(() => {
     //scroll after succesfull fetch forecast
-    if (dayWeather.length > 0 && !loading) props.goToTop();
+    if (dayForecast.length > 0 && !loading) goToTop();
   });
 
   // Display error screen
@@ -41,17 +41,18 @@ export const WeatherPage = (props) => {
     return <ErrorInfo />;
   }
 
-  if (dayWeather.length > 0) {
+  if (dayForecast.length > 0) {
     const firstDay = rangeDays[0],
       lastDay = rangeDays[1];
     const dayList = getListDay(firstDay, lastDay, city.timezone);
     /* I take the next hour, for the forecast for other days, 
     I take the forecast for the middle of the day*/
+    
     const index =
-      getFormatDate((firstDay.dt, city.timezone)) === currentDay
+    getFormatDate(firstDay.dt,city.timezone) === currentDay
         ? 0
-        : Math.round((dayWeather.length - 1) / 2);
-    const currentHourWeather = dayWeather[index];
+        : Math.round((dayForecast.length - 1) / 2);
+    const currentHourWeather = dayForecast[index];
 
     return (
       <View>
@@ -61,10 +62,10 @@ export const WeatherPage = (props) => {
         >
           <WeatherDetails
             city={city.name}
-            dayWeather={currentHourWeather}
+            dayForecast={currentHourWeather}
             currentDay={currentDay}
           />
-          <WeatherHourlyList city={city} dayWeather={dayWeather} />
+          <WeatherHourlyList city={city} dayForecast={dayForecast} />
         </ImageBackground>
         <WeatherDaysList dayList={dayList} currentDay={currentDay} />
       </View>
@@ -82,3 +83,5 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
 });
+
+export default WeatherPage;

@@ -6,7 +6,7 @@ import { colors, typography } from "../styles";
 const WeatherHourlyList = (props) => {
   return (
     <SafeAreaView>
-      {props.dayWeather.map((item) => (
+      {props.dayForecast.map((item) => (
         <View key={item.dt.toString()} style={styles.itemList}>
           <Text style={styles.info}>
             {getHour(item.dt, props.city.timezone)}

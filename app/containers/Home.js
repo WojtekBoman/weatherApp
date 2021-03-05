@@ -1,10 +1,10 @@
 import React, { useRef } from "react";
 import { ScrollView, StyleSheet } from "react-native";
-import { WeatherPage } from "../components/WeatherPage";
+import WeatherPage from "../components/WeatherPage";
 import SearchBar from "../components/SearchBar";
 
 const Home = () => {
-  const scrollView = useRef(null);
+  const scrollView = useRef();
 
   const goToTop = () => {
     scrollView.current.scrollTo({ x: 0, y: 0, animated: true });

@@ -23,7 +23,6 @@ const WeatherDaysList = (props) => {
             <ListItem.Title>{l.day}</ListItem.Title>
             <ListItem.Subtitle>{l.date}</ListItem.Subtitle>
           </ListItem.Content>
-          {console.log(l.date, props)}
           {isCurrentDay(l.date, props.currentDay) && <ListItem.Chevron />}
         </ListItem>
       ))}
