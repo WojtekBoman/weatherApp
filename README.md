@@ -28,7 +28,7 @@ Project is created with:
 
 ## Setup
 
-Make sure you have Expo CLI
+Make sure that you have Expo CLI
 ```
 npm install -g expo-cli
 ```
