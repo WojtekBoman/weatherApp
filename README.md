@@ -20,8 +20,10 @@ Project is created with:
 
 ## Screenshots
 ![HomeScreen](https://user-images.githubusercontent.com/47774969/110146715-2ced6f80-7ddb-11eb-874b-bfed2b666a8f.PNG)
-![WeatherScreen](https://user-images.githubusercontent.com/47774969/110146722-2fe86000-7ddb-11eb-947e-ccc0c05a5203.PNG)
-![2screen](https://user-images.githubusercontent.com/47774969/110146733-32e35080-7ddb-11eb-9d3c-d86f000e9b6b.PNG)
+![image](https://user-images.githubusercontent.com/47774969/110148961-be5de100-7ddd-11eb-94b5-23011ae5d4cd.png)
+![image](https://user-images.githubusercontent.com/47774969/110149074-e5b4ae00-7ddd-11eb-8107-f04c6cce872f.png)
+![image](https://user-images.githubusercontent.com/47774969/110149141-fa914180-7ddd-11eb-9c6c-2c1d388d235c.png)
+
 
 
 ## Setup
