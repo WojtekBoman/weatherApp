@@ -22,6 +22,7 @@ export const getListDay = (firstDay, lastDay, timezone) => {
     const dt2 = new Date((lastDay.dt + timezone) * 1000);
     const diffTime = diffDays(dt1, dt2);
     let counter = 0;
+    //Difference in days + today
     while (counter < diffTime + 1) {
       let dateToAdd = new Date((firstDay.dt + timezone) * 1000);
       dateToAdd.setDate(dateToAdd.getDate() + counter);
