@@ -30,7 +30,8 @@ export default (state = initialState, action) => {
         forecastList: action.payload.list,
         city: action.payload.city,
         currentDay: getFormatDate(
-          action.payload.list[0].dt,action.payload.city.timezone
+          action.payload.list[0].dt,
+          action.payload.city.timezone
         ),
       };
     case forecastConstants.FETCH_FORECAST_FAILURE:

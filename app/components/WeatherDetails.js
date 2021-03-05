@@ -1,48 +1,49 @@
 import React from "react";
 import { View, StyleSheet, Text } from "react-native";
 import { Ionicons, FontAwesome5, Entypo } from "@expo/vector-icons";
-import {colors,icons,typography} from '../styles'
+import { colors, icons, typography } from "../styles";
 
 const WeatherDetails = (props) => {
-
   return (
     <View>
       <View style={styles.weatherInfo}>
         <Text style={styles.title}>{props.city}</Text>
         <View style={styles.additionalInfo}>
-          <Text style={styles.subtitle}>
-            {props.dayForecast.main.temp}°C
-          </Text>
+          <Text style={styles.subtitle}>{props.dayForecast.main.temp}°C</Text>
         </View>
         <Text style={styles.subtitle}>
           {props.dayForecast.weather[0].description}
         </Text>
-        <Text style={styles.info}>
-          {props.currentDay}
-        </Text>
+        <Text style={styles.info}>{props.currentDay}</Text>
       </View>
 
       <View style={styles.additionalInfo}>
         <View style={styles.viewAlignedCenter}>
-          <Ionicons name="water" size={icons.weatherIconSize} color={colors.white} />
+          <Ionicons
+            name="water"
+            size={icons.weatherIconSize}
+            color={colors.white}
+          />
           <Text style={styles.info}>Humidity</Text>
-          <Text style={styles.info}>
-            {props.dayForecast.main.humidity}%
-          </Text>
+          <Text style={styles.info}>{props.dayForecast.main.humidity}%</Text>
         </View>
         <View style={styles.viewAlignedCenter}>
-          <Entypo name="air" size={icons.weatherIconSize} color={colors.white} />
+          <Entypo
+            name="air"
+            size={icons.weatherIconSize}
+            color={colors.white}
+          />
           <Text style={styles.info}>Pressure</Text>
-          <Text style={styles.info}>
-            {props.dayForecast.main.pressure} Pa
-          </Text>
+          <Text style={styles.info}>{props.dayForecast.main.pressure} Pa</Text>
         </View>
         <View style={styles.viewAlignedCenter}>
-          <FontAwesome5 name="wind" size={icons.weatherIconSize} color={colors.white} />
+          <FontAwesome5
+            name="wind"
+            size={icons.weatherIconSize}
+            color={colors.white}
+          />
           <Text style={styles.info}>Wind</Text>
-          <Text style={styles.info}>
-            {props.dayForecast.wind.speed} m/s
-          </Text>
+          <Text style={styles.info}>{props.dayForecast.wind.speed} m/s</Text>
         </View>
       </View>
     </View>
@@ -53,7 +54,7 @@ const styles = StyleSheet.create({
   weatherInfo: {
     flex: 1,
     alignItems: "center",
-    margin: 30
+    margin: 30,
   },
   additionalInfo: {
     flex: 1,
@@ -74,7 +75,7 @@ const styles = StyleSheet.create({
   },
   info: {
     color: colors.white,
-    fontSize:typography.infoFontSize,
+    fontSize: typography.infoFontSize,
   },
 });
 

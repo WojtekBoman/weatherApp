@@ -7,7 +7,7 @@ const WelcomeInfo = () => {
   return (
     <View style={styles.infoWindow}>
       <Text style={styles.title}>Check weather forecast in any location</Text>
-      <Image source={require('../img/weather.png')} />
+      <Image source={require("../img/weather.png")} />
     </View>
   );
 };

@@ -30,7 +30,7 @@ const WeatherPage = (props) => {
   );
   const error = useSelector((state) => state.forecast.error);
   const loading = useSelector((state) => state.forecast.loading);
-  const {goToTop} = props;
+  const { goToTop } = props;
   useEffect(() => {
     //Scroll after succesfull fetch forecast
     if (dayForecast.length > 0 && !loading) goToTop();
@@ -47,9 +47,9 @@ const WeatherPage = (props) => {
     const dayList = getListDay(firstDay, lastDay, city.timezone);
     /* For today I download the forecast for the current hour,
      for other days of the week I choose the forecast for the hour in the middle of the day*/
-    
+
     const index =
-    getFormatDate(firstDay.dt,city.timezone) === currentDay
+      getFormatDate(firstDay.dt, city.timezone) === currentDay
         ? 0
         : Math.round((dayForecast.length - 1) / 2);
     const currentHourWeather = dayForecast[index];

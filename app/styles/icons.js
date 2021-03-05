@@ -1,4 +1,4 @@
 export const icons = {
-    weatherIconSize: 32,
-    infoIconSize:200
-}
+  weatherIconSize: 32,
+  infoIconSize: 200,
+};

@@ -3,9 +3,8 @@ export const getHour = (date, timezone) => {
   return fullDate.toLocaleTimeString().substr(0, 5);
 };
 
-export const getFormatDate = (date, timezone) => formatDate(
-  new Date((date + timezone) * 1000)
-)
+export const getFormatDate = (date, timezone) =>
+  formatDate(new Date((date + timezone) * 1000));
 
 export const getListDay = (firstDay, lastDay, timezone) => {
   const list = [];
