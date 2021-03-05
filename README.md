@@ -19,9 +19,7 @@ Project is created with:
 * OpenWeather API - https://openweathermap.org/forecast5
 
 ## Screenshots
-![HomeScreen](https://user-images.githubusercontent.com/47774969/110146715-2ced6f80-7ddb-11eb-874b-bfed2b666a8f.PNG)
 ![image](https://user-images.githubusercontent.com/47774969/110148961-be5de100-7ddd-11eb-94b5-23011ae5d4cd.png)
-![image](https://user-images.githubusercontent.com/47774969/110149074-e5b4ae00-7ddd-11eb-8107-f04c6cce872f.png)
 ![image](https://user-images.githubusercontent.com/47774969/110149141-fa914180-7ddd-11eb-9c6c-2c1d388d235c.png)
 
 
