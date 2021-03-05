@@ -6,7 +6,7 @@ import { typography, icons, infoWindow } from "../styles";
 const WelcomeInfo = () => {
   return (
     <View style={styles.infoWindow}>
-      <Text style={styles.title}>Check weather forecast</Text>
+      <Text style={styles.title}>Check weather forecast in any location</Text>
       <MaterialCommunityIcons name="weather-cloudy" size={icons.infoIconSize} />
     </View>
   );

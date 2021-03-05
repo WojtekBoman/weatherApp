@@ -1,26 +1,11 @@
-export const formatDate = (date) => {
-  let d = new Date(date),
-    month = "" + (d.getMonth() + 1),
-    day = "" + d.getDate(),
-    year = d.getFullYear();
-
-  if (month.length < 2) month = "0" + month;
-  if (day.length < 2) day = "0" + day;
-
-  return [year, month, day].join("-");
-};
-
 export const getHour = (date, timezone) => {
   let fullDate = new Date((date + timezone) * 1000);
   return fullDate.toLocaleTimeString().substr(0, 5);
 };
 
-const diffDays = (dt1, dt2) =>
-  Math.floor(
-    (Date.UTC(dt2.getFullYear(), dt2.getMonth(), dt2.getDate()) -
-      Date.UTC(dt1.getFullYear(), dt1.getMonth(), dt1.getDate())) /
-      (1000 * 60 * 60 * 24)
-  );
+export const getFormatDate = (date, timezone) => formatDate(
+  new Date((date + timezone) * 1000)
+);
 
 export const getListDay = (firstDay, lastDay, timezone) => {
   const list = [];
@@ -39,15 +24,34 @@ export const getListDay = (firstDay, lastDay, timezone) => {
     const diffTime = diffDays(dt1, dt2);
     let counter = 0;
     while (counter < diffTime + 1) {
-      let y = new Date((firstDay.dt + timezone) * 1000);
-      y.setDate(y.getDate() + counter);
+      let dateToAdd = new Date((firstDay.dt + timezone) * 1000);
+      dateToAdd.setDate(dateToAdd.getDate() + counter);
 
       list.push({
-        day: weekday[y.getDay()],
-        date: formatDate(y),
+        day: weekday[dateToAdd.getDay()],
+        date: formatDate(dateToAdd),
       });
       counter++;
     }
   }
   return list;
 };
+
+const formatDate = (date) => {
+  let dt = new Date(date),
+    month = "" + (dt.getMonth() + 1),
+    day = "" + dt.getDate(),
+    year = dt.getFullYear();
+
+  if (month.length < 2) month = "0" + month;
+  if (day.length < 2) day = "0" + day;
+
+  return [year, month, day].join("-");
+};
+
+const diffDays = (dt1, dt2) =>
+  Math.floor(
+    (Date.UTC(dt2.getFullYear(), dt2.getMonth(), dt2.getDate()) -
+      Date.UTC(dt1.getFullYear(), dt1.getMonth(), dt1.getDate())) /
+      (1000 * 60 * 60 * 24)
+  );

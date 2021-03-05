@@ -7,7 +7,7 @@ const ErrorInfo = () => {
     return (
         <View style={styles.infoWindow}>
         <Text style={styles.title}>
-          Not found forecasts for your location
+          No forecast found for this location
         </Text>
         <MaterialIcons name="error" size={icons.infoIconSize} color={colors.red} />
       </View>

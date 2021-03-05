@@ -1,7 +1,7 @@
 import { forecastConstants } from "../constants/forecastConstants";
-import { formatDate } from "../utils/dateUtils";
+import { getFormatDate } from "../utils/dateUtils";
 
-const initialState = {
+export const initialState = {
   city: {},
   forecastList: [],
   loading: false,
@@ -22,17 +22,15 @@ export default (state = initialState, action) => {
         ...state,
         loading: true,
       };
-      //format date in order to keep dates in timezone's formats
+    //format date in order to keep dates in timezone's formats
     case forecastConstants.FETCH_FORECAST_SUCCESS:
       return {
         loading: false,
         error: "",
         forecastList: action.payload.list,
         city: action.payload.city,
-        currentDay: formatDate(
-          new Date(
-            (action.payload.list[0].dt + action.payload.city.timezone) * 1000
-          )
+        currentDay: getFormatDate(
+          action.payload.list[0].dt,action.payload.city.timezone
         ),
       };
     case forecastConstants.FETCH_FORECAST_FAILURE:

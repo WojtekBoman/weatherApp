@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import {View, ToastAndroid} from 'react-native';
+import {View} from 'react-native';
 import { Input, Button } from "react-native-elements";
 import { useDispatch } from "react-redux";
 import {fetchForecast} from '../actions/forecastActions';

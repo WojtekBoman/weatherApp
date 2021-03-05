@@ -1,6 +1,6 @@
 import { colors } from "./colors";
 import { typography } from "./typography";
-import {icons} from './icons';
-import {infoWindow} from './infoWindow';
+import { icons } from "./icons";
+import { infoWindow } from "./infoWindow";
 
-export { colors, typography, icons,infoWindow };
+export { colors, typography, icons, infoWindow };
