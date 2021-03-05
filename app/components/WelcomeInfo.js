@@ -1,13 +1,13 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
-import { typography, icons, infoWindow } from "../styles";
+import { typography, infoWindow } from "../styles";
+import { Image } from "react-native";
 
 const WelcomeInfo = () => {
   return (
     <View style={styles.infoWindow}>
       <Text style={styles.title}>Check weather forecast in any location</Text>
-      <MaterialCommunityIcons name="weather-cloudy" size={icons.infoIconSize} />
+      <Image source={require('../img/weather.png')} />
     </View>
   );
 };
