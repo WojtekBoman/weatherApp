@@ -4,7 +4,6 @@ A simple mobile application that allows you to check the weather forecast in any
 ## Table of contents
 * [General info](#general-info)
 * [Technologies](#technologies)
-* [Functionalities](#functionalities)
 * [Screenshots](#screenshots)
 * [Setup](#setup)
 
@@ -19,16 +18,14 @@ Project is created with:
 * OpenWeather API - https://openweathermap.org/forecast5
 
 ## Screenshots
-![157458604_340963857279634_7612827004636973960_n](https://user-images.githubusercontent.com/47774969/110199829-a4aeaf00-7e5a-11eb-8697-a05fb530cdf0.jpg)
-![157312456_500863537959112_2915628201097817619_n](https://user-images.githubusercontent.com/47774969/110199843-b42df800-7e5a-11eb-985d-72df38a80eb1.jpg)
-![157481308_126678812717973_6106478944346272993_n](https://user-images.githubusercontent.com/47774969/110199854-bf812380-7e5a-11eb-8ee7-627459ae9ed4.jpg)
-
-
-
+![Przechwytywanie](https://user-images.githubusercontent.com/47774969/110199976-98772180-7e5b-11eb-8465-0ef100aaadb9.PNG)
+![Przechwytywanie2](https://user-images.githubusercontent.com/47774969/110199979-9c0aa880-7e5b-11eb-863b-2623766e7ee6.PNG)
+![Przechwytywanie3](https://user-images.githubusercontent.com/47774969/110199980-9d3bd580-7e5b-11eb-94af-796d2ac32843.PNG)
+![Przechwytywanie4](https://user-images.githubusercontent.com/47774969/110199982-9f059900-7e5b-11eb-8b53-4ca4bab8131a.PNG)
 
 ## Setup
 
-Make sure that you have Expo CLI
+Make sure that you have Expo CLI installed globally
 ```
 npm install -g expo-cli
 ```
