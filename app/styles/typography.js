@@ -1,5 +1,5 @@
 export const typography = {
-  titleFontSize: 40,
-  subtitleFontSize: 34,
+  titleFontSize: 42,
+  subtitleFontSize: 32,
   infoFontSize: 24,
 };

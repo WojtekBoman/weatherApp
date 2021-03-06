@@ -6,33 +6,44 @@ export const getHour = (date, timezone) => {
 export const getFormatDate = (date, timezone) =>
   formatDate(new Date((date + timezone) * 1000));
 
-export const getListDay = (firstDay, lastDay, timezone) => {
-  const list = [];
-  if (firstDay) {
-    const weekday = new Array(7);
-    weekday[0] = "Sunday";
-    weekday[1] = "Monday";
-    weekday[2] = "Tuesday";
-    weekday[3] = "Wednesday";
-    weekday[4] = "Thursday";
-    weekday[5] = "Friday";
-    weekday[6] = "Saturday";
+export const getWeekdayName = (day) => {
+  const weekday = new Array(7);
+  weekday[0] = "Sunday";
+  weekday[1] = "Monday";
+  weekday[2] = "Tuesday";
+  weekday[3] = "Wednesday";
+  weekday[4] = "Thursday";
+  weekday[5] = "Friday";
+  weekday[6] = "Saturday";
+  return weekday[day];
+};
 
+export const getListDay = (firstDay, lastDay, timezone) => {
+  let list = [];
+  if (firstDay) {
     const dt1 = new Date((firstDay.dt + timezone) * 1000);
     const dt2 = new Date((lastDay.dt + timezone) * 1000);
     const diffTime = diffDays(dt1, dt2);
-    let counter = 0;
     //Difference in days + today
-    while (counter < diffTime + 1) {
-      let dateToAdd = new Date((firstDay.dt + timezone) * 1000);
-      dateToAdd.setDate(dateToAdd.getDate() + counter);
 
-      list.push({
-        day: weekday[dateToAdd.getDay()],
+    list = [...Array(diffTime+1).keys()].map((day) => {
+      let dateToAdd = new Date((firstDay.dt + timezone) * 1000);
+      dateToAdd.setDate(dateToAdd.getDate() + day);
+      return {
+        day: getWeekdayName(dateToAdd.getDay()),
         date: formatDate(dateToAdd),
-      });
-      counter++;
-    }
+      }
+    })
+    // while (counter < diffTime + 1) {
+    //   let dateToAdd = new Date((firstDay.dt + timezone) * 1000);
+    //   dateToAdd.setDate(dateToAdd.getDate() + counter);
+
+    //   list.push({
+    //     day: getWeekdayName(dateToAdd.getDay()),
+    //     date: formatDate(dateToAdd),
+    //   });
+    //   counter++;
+    // }
   }
   return list;
 };

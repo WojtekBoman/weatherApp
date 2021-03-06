@@ -12,7 +12,7 @@ const WeatherHourlyList = (props) => {
             {getHour(item.dt, props.city.timezone)}
           </Text>
 
-          <Text h4 style={styles.info}>
+          <Text h4 style={styles.description}>
             {item.weather[0].description}
           </Text>
 
@@ -29,13 +29,20 @@ const styles = StyleSheet.create({
   info: {
     color: colors.white,
     fontSize: typography.infoFontSize,
+    textAlign:"center"
+  },
+  description: {
+    color: colors.white,
+    fontSize: typography.infoFontSize,
+    textAlign:"center",
+    flexShrink:1
   },
   itemList: {
     flex: 1,
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    margin: 5,
+    padding:10
   },
 });
 
