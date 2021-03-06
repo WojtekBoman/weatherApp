@@ -38,7 +38,7 @@ const WeatherDetails = (props) => {
             color={colors.white}
           />
           <Text style={styles.info}>Pressure</Text>
-          <Text style={styles.info}>{props.dayForecast.main.pressure} Pa</Text>
+          <Text style={styles.info}>{props.dayForecast.main.pressure} hPa</Text>
         </View>
       </View>
       <View style={styles.viewAlignedCenter}>
