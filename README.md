@@ -4,7 +4,6 @@ A simple mobile application that allows you to check the weather forecast in any
 ## Table of contents
 * [General info](#general-info)
 * [Technologies](#technologies)
-* [Functionalities](#functionalities)
 * [Screenshots](#screenshots)
 * [Setup](#setup)
 
@@ -19,14 +18,14 @@ Project is created with:
 * OpenWeather API - https://openweathermap.org/forecast5
 
 ## Screenshots
-![image](https://user-images.githubusercontent.com/47774969/110148961-be5de100-7ddd-11eb-94b5-23011ae5d4cd.png)
-![image](https://user-images.githubusercontent.com/47774969/110149141-fa914180-7ddd-11eb-9c6c-2c1d388d235c.png)
-
-
+![Przechwytywanie](https://user-images.githubusercontent.com/47774969/110199976-98772180-7e5b-11eb-8465-0ef100aaadb9.PNG)
+![Przechwytywanie2](https://user-images.githubusercontent.com/47774969/110199979-9c0aa880-7e5b-11eb-863b-2623766e7ee6.PNG)
+![Przechwytywanie3](https://user-images.githubusercontent.com/47774969/110199980-9d3bd580-7e5b-11eb-94af-796d2ac32843.PNG)
+![Przechwytywanie4](https://user-images.githubusercontent.com/47774969/110199982-9f059900-7e5b-11eb-8b53-4ca4bab8131a.PNG)
 
 ## Setup
 
-Make sure that you have Expo CLI
+Make sure that you have Expo CLI installed globally
 ```
 npm install -g expo-cli
 ```
