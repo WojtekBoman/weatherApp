@@ -42,14 +42,14 @@ const WeatherDetails = (props) => {
         </View>
       </View>
       <View style={styles.viewAlignedCenter}>
-          <FontAwesome5
-            name="wind"
-            size={icons.weatherIconSize}
-            color={colors.white}
-          />
-          <Text style={styles.info}>Wind</Text>
-          <Text style={styles.info}>{props.dayForecast.wind.speed} m/s</Text>
-        </View>
+        <FontAwesome5
+          name="wind"
+          size={icons.weatherIconSize}
+          color={colors.white}
+        />
+        <Text style={styles.info}>Wind</Text>
+        <Text style={styles.info}>{props.dayForecast.wind.speed} m/s</Text>
+      </View>
     </View>
   );
 };
@@ -72,17 +72,17 @@ const styles = StyleSheet.create({
   title: {
     color: colors.white,
     fontSize: typography.titleFontSize,
-    textAlign:"center"
+    textAlign: "center",
   },
   subtitle: {
     color: colors.white,
     fontSize: typography.subtitleFontSize,
-    textAlign:"center"
+    textAlign: "center",
   },
   info: {
     color: colors.white,
     fontSize: typography.infoFontSize,
-    textAlign:"center"
+    textAlign: "center",
   },
 });
 

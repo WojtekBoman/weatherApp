@@ -29,20 +29,20 @@ const styles = StyleSheet.create({
   info: {
     color: colors.white,
     fontSize: typography.infoFontSize,
-    textAlign:"center"
+    textAlign: "center",
   },
   description: {
     color: colors.white,
     fontSize: typography.infoFontSize,
-    textAlign:"center",
-    flexShrink:1
+    textAlign: "center",
+    flexShrink: 1,
   },
   itemList: {
     flex: 1,
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    padding:10
+    padding: 10,
   },
 });
 
