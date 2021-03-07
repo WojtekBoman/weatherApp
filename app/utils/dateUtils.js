@@ -26,24 +26,14 @@ export const getListDay = (firstDay, lastDay, timezone) => {
     const diffTime = diffDays(dt1, dt2);
     //Difference in days + today
 
-    list = [...Array(diffTime+1).keys()].map((day) => {
+    list = [...Array(diffTime + 1).keys()].map((day) => {
       let dateToAdd = new Date((firstDay.dt + timezone) * 1000);
       dateToAdd.setDate(dateToAdd.getDate() + day);
       return {
         day: getWeekdayName(dateToAdd.getDay()),
         date: formatDate(dateToAdd),
-      }
-    })
-    // while (counter < diffTime + 1) {
-    //   let dateToAdd = new Date((firstDay.dt + timezone) * 1000);
-    //   dateToAdd.setDate(dateToAdd.getDate() + counter);
-
-    //   list.push({
-    //     day: getWeekdayName(dateToAdd.getDay()),
-    //     date: formatDate(dateToAdd),
-    //   });
-    //   counter++;
-    // }
+      };
+    });
   }
   return list;
 };

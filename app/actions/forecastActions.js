@@ -6,7 +6,9 @@ export const fetchForecast = (searchText) => {
     dispatch(request());
     forecastService.fetchForecast(searchText).then(
       (forecasts) => dispatch(success(forecasts)),
-      (error) => dispatch(failure(error))
+      (error) => {
+        dispatch(failure(error.toString()));
+      }
     );
   };
 

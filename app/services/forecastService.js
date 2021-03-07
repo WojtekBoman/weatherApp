@@ -14,11 +14,15 @@ const fetchForecast = (searchText) => {
 };
 
 const handleResponse = (res) => {
-  return res.json().then((response) => {
-    if (response.cod !== "200") {
-      return Promise.reject(response.message);
+  return res.text().then((text) => {
+    const data = text && JSON.parse(text);
+    if (!res.ok) {
+      let error = (data && data.message) || res.statusText;
+
+      return Promise.reject(error);
     }
-    return response;
+
+    return data;
   });
 };
 

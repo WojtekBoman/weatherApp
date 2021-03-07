@@ -38,7 +38,7 @@ const WeatherPage = (props) => {
 
   // Display error screen
   if (error) {
-    return <ErrorInfo />;
+    return <ErrorInfo errorInfo={error} />;
   }
 
   if (dayForecast.length > 0) {

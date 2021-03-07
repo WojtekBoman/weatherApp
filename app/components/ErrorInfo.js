@@ -2,11 +2,13 @@ import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import { FontAwesome5 } from "@expo/vector-icons";
 import { colors, icons, infoWindow, typography } from "../styles";
+import { capitalize } from "../utils/wordUtils";
 
-const ErrorInfo = () => {
+const ErrorInfo = (props) => {
+  const { errorInfo } = props;
   return (
     <View style={styles.infoWindow}>
-      <Text style={styles.title}>No forecast found for this location</Text>
+      <Text style={styles.title}>{capitalize(errorInfo)}</Text>
       <FontAwesome5
         name="sad-cry"
         size={icons.infoIconSize}
